@@ -11,7 +11,15 @@ A drop in replacement for more official bindings.
 Unofficial bindings for NextJs.
 
 ```res
-open Next
+open GreenfinityNext.Next
+```
+
+### NextAuth
+
+Unofficial bindings for NextAuth.
+
+```res
+open GreenfinityNext.NextAuth
 ```
 
 ### Fetch
@@ -19,7 +27,7 @@ open Next
 Utilities to use NextJs's Fetch.
 
 ```res
-open Fetch
+open GreenfinityNext.Fetch
 ```
 
 ### Errors
