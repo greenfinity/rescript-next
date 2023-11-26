@@ -280,3 +280,13 @@ module Image = {
     ~width: float=?,
   ) => React.element = "default"
 }
+
+module Metadata = {
+  type icons = {icon?: string, apple?: string}
+  type t = {
+    title?: string,
+    description?: string,
+    icons?: icons,
+    manifest?: string,
+  }
+}
