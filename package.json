@@ -33,6 +33,7 @@
     "jest:run": "yarn jest --coverage",
     "jest:dev": "yarn jest --watchAll"
   },
+  "preferUnplugged": true,
   "peerDependencies": {
     "@greenlabs/ppx-spice": "0.1.10",
     "@rescript/react": "^0.11.0",
