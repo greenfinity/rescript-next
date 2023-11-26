@@ -1,0 +1,99 @@
+{
+  "name": "@greenfinity/rescript-next",
+  "description": "GF Rescript bindings for Next",
+  "version": "0.1.1-dev.1",
+  "license": "MIT",
+  "homepage": "https://github.com/reebalazs/gf-rescript-next",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:reebalazs/gf-rescript-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reebalazs/gf-rescript-next/issues"
+  },
+  "author": "Balazs Ree <ree@greenfinity.hu>",
+  "engines": {
+    "node": ">=16.15.1",
+    "yarn": ">=3.2.3"
+  },
+  "files": [
+    "src",
+    "__tests__",
+    "bsconfig.json"
+  ],
+  "scripts": {
+    "changelog": "yarn auto-changelog -p && git add HISTORY.md",
+    "dev": "yarn res link; yarn rescript:dev",
+    "yalc:dev": "yarn res link; yarn rescript:dev & yarn nodemon -x \"yalc push\"",
+    "yalc:push": "yarn nodemon -e res -x \"yalc push\"",
+    "build": "yarn rescript:build",
+    "rescript:build": "rescript build -with-deps",
+    "rescript:dev": "NINJA_ANSI_FORCED=1 RES_LOG=info rescript build -w -with-deps",
+    "test": "yarn jest:run",
+    "jest:run": "yarn jest --coverage",
+    "jest:dev": "yarn jest --watchAll"
+  },
+  "peerDependencies": {
+    "@greenlabs/ppx-spice": "0.1.10",
+    "@rescript/react": ">=0.10.3",
+    "next": "13.1.6",
+    "rescript": ">=10.1.4",
+    "rescript-logger": "3.1.0"
+  },
+  "devDependencies": {
+    "@glennsl/rescript-jest": "^0.10.0",
+    "@greenlabs/ppx-spice": "0.1.10",
+    "@rescript/react": "^0.10.3",
+    "auto-changelog": "^2.4.0",
+    "bsb-js": "^1.1.7",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "prettier": "^2.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rescript": "^10.1.4",
+    "rescript-logger": "3.1.0"
+  },
+  "devDependenciesMeta": {
+    "@glennsl/rescript-jest@0.10.0": {
+      "unplugged": true
+    },
+    "@rescript/react@0.10.3": {
+      "unplugged": true
+    },
+    "rescript@10.0.1": {
+      "unplugged": true
+    },
+    "rescript-logger@3.1.0": {
+      "unplugged": true
+    },
+    "rescript@10.1.4": {
+      "unplugged": true
+    }
+  },
+  "dependenciesMeta": {
+    "@glennsl/rescript-jest@0.10.0": {
+      "unplugged": true
+    },
+    "@greenlabs/ppx-spice@0.1.10": {
+      "unplugged": true
+    },
+    "@rescript/react@0.10.3": {
+      "unplugged": true
+    },
+    "rescript@10.1.4": {
+      "unplugged": true
+    },
+    "rescript-logger@3.1.0": {
+      "unplugged": true
+    }
+  },
+  "stableVersion": "0.1.0",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
