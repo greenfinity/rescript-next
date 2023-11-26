@@ -16,7 +16,6 @@ module Res = {
   @set
   external statusCode: (
     t,
-    @int
     [
       | @as(200) #Success
       | @as(400) #BadRequest
@@ -219,8 +218,7 @@ module Script = {
 module Error = {
   @module("next/error") @react.component
   external make: (
-    ~statusCode: @int
-    [
+    ~statusCode: [
       | @as(400) #BadRequest
       | @as(403) #Forbidden
       | @as(404) #NotFound
