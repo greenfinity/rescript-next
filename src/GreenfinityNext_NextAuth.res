@@ -1,19 +1,6 @@
 open Js.Promise2
 module Next = GreenfinityNext_Next
 
-type session
-
-type authOptions
-
-module SessionProvider = {
-  @module("next-auth/react") @react.component
-  external make: (
-    ~session: session,
-    ~refetchInterval: int=?,
-    ~children: 'children=?,
-  ) => React.element = "SessionProvider"
-}
-
 type user = {
   name: option<string>,
   email: option<string>,
@@ -22,7 +9,19 @@ type user = {
 
 type sessionData = {
   user: option<user>,
-  expires: Js.Date.t,
+  expires?: Js.Date.t,
+}
+type session = sessionData
+
+type authOptions
+
+module SessionProvider = {
+  @module("next-auth/react") @react.component
+  external make: (
+    ~session: sessionData,
+    ~refetchInterval: int=?,
+    ~children: 'children=?,
+  ) => React.element = "SessionProvider"
 }
 
 type sessionStatus = [
