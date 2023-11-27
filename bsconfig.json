@@ -30,6 +30,6 @@
     "rescript-logger",
     "@greenlabs/ppx-spice"
   ],
-  "ppx-flags": ["@greenlabs/ppx-spice/ppx"],
+  "ppx-flags": ["rescript-logger/ppx", "@greenlabs/ppx-spice/ppx"],
   "bs-dev-dependencies": ["@glennsl/rescript-jest"]
 }

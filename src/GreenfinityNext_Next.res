@@ -16,6 +16,7 @@ module Res = {
   @set
   external statusCode: (
     t,
+    @int
     [
       | @as(200) #Success
       | @as(400) #BadRequest
@@ -216,17 +217,52 @@ module Script = {
 
 // https://nextjs.org/docs/advanced-features/custom-error-page#reusing-the-built-in-error-page
 module Error = {
-  @module("next/error") @react.component
-  external make: (
-    ~statusCode: [
-      | @as(400) #BadRequest
-      | @as(403) #Forbidden
-      | @as(404) #NotFound
-      | @as(500) #ServerError
-    ],
-    ~title: string=?,
-    ~withDarkMode: bool=?,
-  ) => React.element = "default"
+  // @string and @int attributes not supported. See https://github.com/rescript-lang/rescript-compiler/issues/5724
+  // @module("next/error") @react.component
+  // external make = (
+  // ~statusCode: @int
+  // [
+  //   | @as(#400) #BadRequest
+  //   | @as(#403) #Forbidden
+  //   | @as(#404) #NotFound
+  //   | @as(#500) #ServerError
+  // ],
+  // ~title: string=?,
+  // ~withDarkMode: bool=?,
+  // ) => React.element = "default"
+  type rawProps = {
+    statusCode: int,
+    title?: string,
+    withDarkMode?: bool,
+  }
+  @module("next/error") external rawMake: rawProps => React.element = "default"
+
+  type statusCode = [
+    | #BadRequest
+    | #Forbidden
+    | #NotFound
+    | #ServerError
+  ]
+
+  type props = {
+    statusCode: statusCode,
+    title: option<string>,
+    withDarkMode: option<bool>,
+  }
+
+  let make = ({statusCode, title, withDarkMode}: props) =>
+    rawMake({
+      statusCode: {
+        switch statusCode {
+        | #BadRequest => 400
+        | #Forbidden => 400
+        | #NotFound => 400
+        | #ServerError => 500
+        }
+      },
+      ?title,
+      ?withDarkMode,
+    })
 }
 
 module Dynamic = {
