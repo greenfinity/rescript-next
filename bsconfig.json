@@ -1,6 +1,5 @@
 {
   "name": "@greenfinity/rescript-next",
-  "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
   "sources": [
     {
       "dir": "src",
@@ -12,9 +11,7 @@
       "subdirs": true
     }
   ],
-  "reason": {
-    "react-jsx": 3
-  },
+  "jsx": { "version": 4, "mode": "classic" },
   "warnings": {
     "error": "+101"
   },
