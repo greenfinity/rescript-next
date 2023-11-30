@@ -18,7 +18,7 @@ type authOptions
 module SessionProvider = {
   @module("next-auth/react") @react.component
   external make: (
-    ~session: sessionData,
+    ~session: sessionData=?,
     ~refetchInterval: int=?,
     ~children: 'children=?,
   ) => React.element = "SessionProvider"
