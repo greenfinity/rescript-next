@@ -317,6 +317,15 @@ module Image = {
   ) => React.element = "default"
 }
 
+module Headers = {
+  type t
+  @new @module("next/headers") external make: unit => t = "headers"
+  @send external get: (t, string) => option<string> = "get"
+  @send external keys: t => Js.Array.array_like<string> = "keys"
+  @send external values: t => Js.Array.array_like<string> = "values"
+  @send external items: t => Js.Array.array_like<(string, string)> = "items"
+}
+
 module Metadata = {
   type icons = {icon?: string, apple?: string}
   type t = {
@@ -325,10 +334,4 @@ module Metadata = {
     icons?: icons,
     manifest?: string,
   }
-}
-
-module Navigation = {
-  type \"type" = [#replace | #push]
-  @module("next/navigation")
-  external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
 }

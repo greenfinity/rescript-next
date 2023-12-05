@@ -48,6 +48,20 @@ external signInWithProvider: string => unit = "signIn"
 @module("next-auth/react")
 external signInWithProviderOptions: (string, {..}, {..}) => promise<{..}> = "signIn"
 
+type rawSignInResult = {
+  error: Js.nullable<string>,
+  status: int,
+  ok: bool,
+  url?: string,
+}
+
+type signInResult =
+  | Some(rawSignInResult)
+  | None
+
+@module("next-auth/react")
+external signInWithRawProviderOptions: (string, {..}, {..}) => promise<signInResult> = "signIn"
+
 type getSessionRequest = {req: Next.Req.t}
 @module("next-auth/react")
 external _getSession: getSessionRequest => Js.Promise2.t<Js.Nullable.t<sessionData>> = "getSession"
@@ -64,7 +78,7 @@ external _getServerSession: (
 let getServerSession = (req, res, authOptions) =>
   _getServerSession(req, res, authOptions)->then(r => r->Js.Nullable.toOption->resolve)
 
-let emailOfSession = sessionData =>
+let emailOfSession = (sessionData: option<sessionData>) =>
   switch sessionData {
   | Some(sessionData) =>
     switch sessionData.user {
