@@ -6,3 +6,4 @@ module Fetch = GreenfinityNext_Fetch
 module Next = GreenfinityNext_Next
 module Navigation = GreenfinityNext_Navigation
 module NextAuth = GreenfinityNext_NextAuth
+module Url = GreenfinityNext_Url
