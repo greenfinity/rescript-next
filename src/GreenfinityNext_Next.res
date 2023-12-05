@@ -326,9 +326,3 @@ module Metadata = {
     manifest?: string,
   }
 }
-
-module Navigation = {
-  type \"type" = [#replace | #push]
-  @module("next/navigation")
-  external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
-}
