@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@glennsl/rescript-jest", "npm:0.10.0"],\
-            ["@greenlabs/ppx-spice", "npm:0.1.10"],\
+            ["@greenlabs/ppx-spice", "npm:0.2.1-rc.2"],\
             ["@rescript/react", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:0.11.0"],\
             ["auto-changelog", "npm:2.4.0"],\
             ["bsb-js", "npm:1.1.7"],\
@@ -50,7 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.8.8"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:18.2.0"],\
-            ["rescript", "npm:10.1.4"],\
+            ["rescript", "npm:11.0.0-rc.8"],\
             ["rescript-logger", "npm:3.1.0"]\
           ],\
           "linkType": "SOFT"\
@@ -898,7 +898,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@greenfinity/rescript-next", "workspace:."],\
             ["@glennsl/rescript-jest", "npm:0.10.0"],\
-            ["@greenlabs/ppx-spice", "npm:0.1.10"],\
+            ["@greenlabs/ppx-spice", "npm:0.2.1-rc.2"],\
             ["@rescript/react", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:0.11.0"],\
             ["auto-changelog", "npm:2.4.0"],\
             ["bsb-js", "npm:1.1.7"],\
@@ -914,17 +914,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.8.8"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:18.2.0"],\
-            ["rescript", "npm:10.1.4"],\
+            ["rescript", "npm:11.0.0-rc.8"],\
             ["rescript-logger", "npm:3.1.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
       ["@greenlabs/ppx-spice", [\
-        ["npm:0.1.10", {\
-          "packageLocation": "./.yarn/unplugged/@greenlabs-ppx-spice-npm-0.1.10-e68907fc26/node_modules/@greenlabs/ppx-spice/",\
+        ["npm:0.2.1-rc.2", {\
+          "packageLocation": "./.yarn/unplugged/@greenlabs-ppx-spice-npm-0.2.1-rc.2-93b2ac71db/node_modules/@greenlabs/ppx-spice/",\
           "packageDependencies": [\
-            ["@greenlabs/ppx-spice", "npm:0.1.10"]\
+            ["@greenlabs/ppx-spice", "npm:0.2.1-rc.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7747,10 +7747,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["rescript", [\
-        ["npm:10.1.4", {\
-          "packageLocation": "./.yarn/unplugged/rescript-npm-10.1.4-592d22dc9c/node_modules/rescript/",\
+        ["npm:11.0.0-rc.8", {\
+          "packageLocation": "./.yarn/unplugged/rescript-npm-11.0.0-rc.8-25ce831651/node_modules/rescript/",\
           "packageDependencies": [\
-            ["rescript", "npm:10.1.4"],\
+            ["rescript", "npm:11.0.0-rc.8"],\
             ["@babel/runtime", "npm:7.23.4"]\
           ],\
           "linkType": "HARD"\
