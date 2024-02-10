@@ -5,6 +5,16 @@ open GreenfinityNext_Url
 type \"type" = [#replace | #push]
 @module("next/navigation")
 external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
+@module("next/navigation")
+external notFound: unit => unit = "notFound"
+@module("next/navigation")
+external useSelectedLayoutSegment: (~parallelRoutesKey: string=?) => string =
+  "useSelectedLayoutSegment"
+@module("next/navigation")
+external useSelectedLayoutSegments: (~parallelRoutesKey: string=?) => array<string> =
+  "useSelectedLayoutSegments"
+@module("next/navigation")
+external usePathname: unit => string = "usePathname"
 
 module Router = {
   type t = {
@@ -20,9 +30,20 @@ module Router = {
   @module("next/navigation")
   external useSearchParams: unit => URLSearchParams.t = "useSearchParams"
 
-  @send external push: (t, string) => unit = "push"
-  @send external pushObj: (t, GreenfinityNext_Next.Router.pathObj) => unit = "push"
+  type options = {scroll?: bool}
 
-  @send external replace: (t, string) => unit = "replace"
-  @send external replaceObj: (t, GreenfinityNext_Next.Router.pathObj) => unit = "replace"
+  @send external push: (t, string, ~options: options=?) => unit = "push"
+  @send
+  external pushObj: (t, GreenfinityNext_Next.Router.pathObj, ~options: options=?) => unit = "push"
+
+  @send external replace: (t, string, ~options: options=?) => unit = "replace"
+  @send
+  external replaceObj: (t, GreenfinityNext_Next.Router.pathObj, ~options: options=?) => unit =
+    "replace"
+
+  @send external back: t => unit = "back"
+  @send external forward: t => unit = "forward"
+
+  @send external refresh: t => unit = "refresh"
+  @send external prefetch: (t, string) => unit = "prefetch"
 }

@@ -9,3 +9,5 @@ module Navigation = GreenfinityNext_Navigation
 module NextAuth = GreenfinityNext_NextAuth
 module Url = GreenfinityNext_Url
 module NextServer = GreenfinityNext_NextServer
+module Font = GreenfinityNext_Font
+module Cache = GreenfinityNext_Cache
