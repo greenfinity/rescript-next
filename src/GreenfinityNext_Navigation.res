@@ -5,6 +5,16 @@ open GreenfinityNext_Url
 type \"type" = [#replace | #push]
 @module("next/navigation")
 external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
+@module("next/navigation")
+external notFound: unit => unit = "notFound"
+external useSelectedLayoutSegment: (~paralellRoutesKey: string=?) => string =
+  "useSelectedLayoutSegment"
+@module("next/navigation")
+external useSelectedLayoutSegments: (~paralellRoutesKey: string=?) => array<string> =
+  "useSelectedLayoutSegments"
+@module("next/navigation")
+external usePathName: unit => string = "usePathName"
+
 
 module Router = {
   type t = {
