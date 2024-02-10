@@ -35,4 +35,7 @@ module Router = {
 
   @send external replace: (t, string) => unit = "replace"
   @send external replaceObj: (t, GreenfinityNext_Next.Router.pathObj) => unit = "replace"
+
+  @send external back: (t) => unit = "back"
+
 }
