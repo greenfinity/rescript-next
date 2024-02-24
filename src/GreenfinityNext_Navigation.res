@@ -7,6 +7,7 @@ type \"type" = [#replace | #push]
 external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
 @module("next/navigation")
 external notFound: unit => unit = "notFound"
+@module("next/navigation")
 external useSelectedLayoutSegment: (~paralellRoutesKey: string=?) => string =
   "useSelectedLayoutSegment"
 @module("next/navigation")
@@ -14,7 +15,6 @@ external useSelectedLayoutSegments: (~paralellRoutesKey: string=?) => array<stri
   "useSelectedLayoutSegments"
 @module("next/navigation")
 external usePathName: unit => string = "usePathName"
-
 
 module Router = {
   type t = {
@@ -41,6 +41,9 @@ module Router = {
   external replaceObj: (t, GreenfinityNext_Next.Router.pathObj, ~options: options=?) => unit =
     "replace"
 
-  @send external back: (t) => unit = "back"
+  @send external back: t => unit = "back"
+  @send external forward: t => unit = "forward"
 
+  @send external refresh: t => unit = "refresh"
+  @send external prefetch: (t, string) => unit = "prefetch"
 }
