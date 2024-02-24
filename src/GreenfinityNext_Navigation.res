@@ -8,10 +8,10 @@ external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
 @module("next/navigation")
 external notFound: unit => unit = "notFound"
 @module("next/navigation")
-external useSelectedLayoutSegment: (~paralellRoutesKey: string=?) => string =
+external useSelectedLayoutSegment: (~parallelRoutesKey: string=?) => string =
   "useSelectedLayoutSegment"
 @module("next/navigation")
-external useSelectedLayoutSegments: (~paralellRoutesKey: string=?) => array<string> =
+external useSelectedLayoutSegments: (~parallelRoutesKey: string=?) => array<string> =
   "useSelectedLayoutSegments"
 @module("next/navigation")
 external usePathName: unit => string = "usePathName"
