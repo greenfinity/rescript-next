@@ -126,6 +126,7 @@ module Link = {
     ~passHref: option<bool>=?,
     ~children: React.element,
     ~className: string=?,
+    ~scroll: bool=?,
   ) => React.element = "default"
 }
 
