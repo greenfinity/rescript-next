@@ -216,6 +216,8 @@ module Script = {
 }
 */
 
+
+/*
 // https://nextjs.org/docs/advanced-features/custom-error-page#reusing-the-built-in-error-page
 module Error = {
   // @string and @int attributes not supported. See https://github.com/rescript-lang/rescript-compiler/issues/5724
@@ -265,6 +267,7 @@ module Error = {
       ?withDarkMode,
     })
 }
+*/
 
 module Dynamic = {
   @deriving(abstract)
