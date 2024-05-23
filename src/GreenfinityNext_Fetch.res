@@ -5,6 +5,20 @@ type method = [#get | #post | #put]
 
 exception JsonDecodeError(string)
 
+module Headers = {
+  type t
+  @new external make: unit => t = "Headers"
+  @send external append: (t, string, string) => unit = "append"
+  @send external delete: (t, string, string) => unit = "delete"
+  @send external set: (t, string, string) => unit = "set"
+  @send external get: (t, string) => option<string> = "get"
+  @send external has: (t, string) => bool = "has"
+  @send external keys: t => Js.Array.array_like<string> = "keys"
+  @send external values: t => Js.Array.array_like<string> = "values"
+  @send external entries: t => Js.Array.array_like<(string, string)> = "entries"
+  // missing forEach, getSetCookie
+}
+
 module FetchResponse = {
   type t = {
     ok: bool,

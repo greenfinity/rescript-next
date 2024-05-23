@@ -32,10 +32,12 @@ module NextResponse = {
     | @as(404) NotFound
     | @as(500) ServerError
 
-  type options = {status: status}
-
   exception ApiError(status)
 
+  type options = {status?: status, statusText?: string, headers?: GreenfinityNext_Fetch.Headers.t}
+
+  @module("next/server") @new
+  external make: ('a, ~options: options=?) => promise<t> = "NextResponse"
   @module("next/server") @scope("NextResponse")
   external json: (Js.Json.t, ~options: options=?) => promise<t> = "json"
 }
