@@ -324,7 +324,8 @@ module Image = {
 module Headers = {
   type t
   @new @module("next/headers") external make: unit => t = "headers"
-  @send external get: (t, string) => option<string> = "get"
+  @send external _get: (t, string) => Js.Nullable.t<string> = "get"
+  let get = (headers, k) => headers->_get(k)->Js.Nullable.toOption
   @send external keys: t => Js.Array.array_like<string> = "keys"
   @send external values: t => Js.Array.array_like<string> = "values"
   @send external items: t => Js.Array.array_like<(string, string)> = "items"
