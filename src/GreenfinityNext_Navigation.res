@@ -2,9 +2,9 @@
 
 open GreenfinityNext_Url
 
-type \"type" = [#replace | #push]
+type type_ = [#replace | #push]
 @module("next/navigation")
-external redirect: (string, ~\"type": \"type"=?, unit) => unit = "redirect"
+external redirect: (string, ~type_: type_=?) => unit = "redirect"
 @module("next/navigation")
 external notFound: unit => unit = "notFound"
 @module("next/navigation")
