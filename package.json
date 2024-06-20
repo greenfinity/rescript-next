@@ -1,7 +1,7 @@
 {
   "name": "@greenfinity/rescript-next",
   "description": "GF Rescript bindings for Next",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "license": "MIT",
   "homepage": "https://github.com/reebalazs/gf-rescript-next",
   "repository": {
