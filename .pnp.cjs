@@ -51,7 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:18.2.0"],\
             ["rescript", "npm:11.0.0-rc.8"],\
-            ["rescript-logger", "npm:3.1.0"]\
+            ["rescript-logger", "npm:4.0.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -915,7 +915,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7306fb94e7039b693f142da429551770e32623a9a58b0b03ba369c15fe60065d8beb8d7eee9d5e77742355b27f78da23c82d1ad57b27fd3958140583665fa19d#npm:18.2.0"],\
             ["rescript", "npm:11.0.0-rc.8"],\
-            ["rescript-logger", "npm:3.1.0"]\
+            ["rescript-logger", "npm:4.0.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -7757,10 +7757,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["rescript-logger", [\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/unplugged/rescript-logger-npm-3.1.0-aa03772d84/node_modules/rescript-logger/",\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/unplugged/rescript-logger-npm-4.0.0-a55a207ac1/node_modules/rescript-logger/",\
           "packageDependencies": [\
-            ["rescript-logger", "npm:3.1.0"]\
+            ["rescript-logger", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
