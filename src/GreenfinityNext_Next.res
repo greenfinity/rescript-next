@@ -216,7 +216,6 @@ module Script = {
 }
 */
 
-
 /*
 // https://nextjs.org/docs/advanced-features/custom-error-page#reusing-the-built-in-error-page
 module Error = {
@@ -301,7 +300,7 @@ module Image = {
     ~layout: [#fixed | #intrinsic | #responsive | #fill]=?,
     ~loader: loaderOptions => string=?,
     ~loading: [
-      | #"lazy"
+      | @as("lazy") #lazy_
       | #eager
     ]=?,
     ~priority: bool=?,
@@ -324,6 +323,9 @@ module Image = {
 module Headers = {
   type t
   @new @module("next/headers") external make: unit => t = "headers"
+  // workaround for "cannot be used from client component" error
+  @module("./GreenfinityNext_Next")
+  external makeWithRequire: unit => t = "headersMakeWithRequire"
   @send external _get: (t, string) => Js.Nullable.t<string> = "get"
   let get = (headers, k) => headers->_get(k)->Js.Nullable.toOption
   @send external keys: t => Js.Array.array_like<string> = "keys"

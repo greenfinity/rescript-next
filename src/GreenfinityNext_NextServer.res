@@ -1,10 +1,27 @@
-open GreenfinityNext_Next
-
 // --
 // app routes support
 // --
 
 module NextRequest = {
+  module Cookies = {
+    type t
+    @send external set: (t, string, string) => unit = "set"
+    @send external get: (t, string) => string = "get"
+    @send external getAll: t => Js.Dict.t<string> = "getAll"
+    @send external delete: (t, string) => unit = "delete"
+    @send external has: (t, string) => bool = "has"
+    @send external clear: t => unit = "clear"
+  }
+
+  module URL = {
+    type t = {
+      ...GreenfinityNext_Url.URL.t,
+      // According to the docs, these should exist:
+      // basePath: string,
+      // buildId?: string,
+    }
+  }
+
   type geo = {
     city: option<string>,
     country: option<string>,
@@ -14,9 +31,11 @@ module NextRequest = {
   }
 
   type t = {
-    headers: Headers.t,
+    headers: GreenfinityNext_Fetch.Headers.t,
     ip: option<string>,
     geo: geo,
+    nextUrl: URL.t,
+    cookies: Cookies.t,
   }
 
   @send external json: t => promise<Js.Json.t> = "json"
@@ -40,4 +59,8 @@ module NextResponse = {
   external make: ('a, ~options: options=?) => promise<t> = "NextResponse"
   @module("next/server") @scope("NextResponse")
   external json: (Js.Json.t, ~options: options=?) => promise<t> = "json"
+}
+
+module Middleware = {
+  type config = {matcher: array<string>}
 }
