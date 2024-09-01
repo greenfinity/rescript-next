@@ -112,6 +112,9 @@
     },
     "rescript-logger@3.1.0": {
       "unplugged": true
+    },
+    "rescript-logger@4.0.0": {
+      "unplugged": true
     }
   },
   "dependencies": {

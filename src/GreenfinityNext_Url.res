@@ -1,4 +1,4 @@
-// Not strictlyr nextjs Url support
+// Not strictly nextjs Url support
 
 module SearchParams = {
   type value
@@ -22,7 +22,6 @@ module URLSearchParams = {
 }
 
 module URL = {
-  @deriving(abstract)
   type t = {
     hash: string,
     host: string,
@@ -37,5 +36,6 @@ module URL = {
     searchParams: URLSearchParams.t,
     username: string,
   }
+
   @new external make: string => t = "URL"
 }
