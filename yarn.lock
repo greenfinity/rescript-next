@@ -465,7 +465,7 @@ __metadata:
   dependencies:
     "@glennsl/rescript-jest": ^0.10.0
     "@greenlabs/ppx-spice": ^0.2.1-rc.2
-    "@rescript/react": ^0.11.0
+    "@rescript/react": ^0.12.0-alpha.3
     auto-changelog: ^2.4.0
     bsb-js: ^1.1.7
     eslint: ^7.30.0
@@ -480,14 +480,14 @@ __metadata:
     prettier: ^2.3.1
     react: ^18.2.0
     react-dom: ^18.2.0
-    rescript: ^11.0.0-rc.8
+    rescript: ^11.1.0
     rescript-logger: ^4.0.0
   peerDependencies:
     "@greenlabs/ppx-spice": ^0.2.1-rc.2
     "@rescript/react": ^0.11.0
     next: ^14.0.3
     next-auth: ^4.23.1
-    rescript: ^11.0.0-rc.8
+    rescript: ^11.1.0
     rescript-logger: ^4.0.0
   dependenciesMeta:
     "@glennsl/rescript-jest@0.10.0":
@@ -1187,13 +1187,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/react@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "@rescript/react@npm:0.11.0"
+"@rescript/react@npm:^0.12.0-alpha.3":
+  version: 0.12.2
+  resolution: "@rescript/react@npm:0.12.2"
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: c399d114f7081dca56b200c377dc4896f7c4e7ec092a73f6b42aadffd7b3b146a462009139e71c834db5989331777ffd57bbcef2adfb165104510aa5c60c9ada
+  checksum: dfef80e1d8be014bf15c6f5131c4e1c2a2aa44b04858efe77286f4c5b9e9c6b7df4e374ab893dddb28f606bbb328c32b8fdc15f9e9ed4bab0df23164a3a4b1aa
   languageName: node
   linkType: hard
 
@@ -6349,14 +6349,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rescript@npm:^11.0.0-rc.8":
-  version: 11.0.0-rc.8
-  resolution: "rescript@npm:11.0.0-rc.8"
+"rescript@npm:^11.1.0":
+  version: 11.1.3
+  resolution: "rescript@npm:11.1.3"
   bin:
     bsc: bsc
     bstracing: lib/bstracing
     rescript: rescript
-  checksum: 0ccb65b8d5e3f76e5a6d98aeee9737a7b9950f30a68bfb72975f93a9aa5145bb7b93f31e81bf02cbfb309fdac517f6961c89795ca39f37b6df99c487c7f3bc2d
+  checksum: 976dbcc511cca11a92fb478013407221df671d564b0f99ba9f4fbfef2f9ced8c8cc10498902e8379b836d41da3518386fc5d56a51b9caf7949b1e4ad344f55e3
   languageName: node
   linkType: hard
 

@@ -23,6 +23,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn res link
       - run: yarn rescript:build
       - run: yarn test
