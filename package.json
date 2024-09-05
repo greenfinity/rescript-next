@@ -19,7 +19,7 @@
   "files": [
     "src",
     "__tests__",
-    "bsconfig.json"
+    "rescript.json"
   ],
   "scripts": {
     "changelog": "yarn auto-changelog -p && git add HISTORY.md",
