@@ -12,7 +12,7 @@ yarn-error.log
 !_*
 lib
 .merlin
-*.bs.js
+*.bs.mjs
 .bsb.lock
 coverage
 .env*.local
