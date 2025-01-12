@@ -2,5 +2,7 @@
   "output": "HISTORY.md",
   "template": "keepachangelog",
   "unreleased": true,
-  "commitLimit": false
+  "commitLimit": false,
+  "startingDate": "2025-01-01",
+  "ignoreCommitPattern": "^(.*)(Release|release)(.*)$"
 }

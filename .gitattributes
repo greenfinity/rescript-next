@@ -1,6 +1,4 @@
 .yarn/**/*    -diff -merge
 .yarn/**/*    linguist-generated=true
-.pnp.cjs    -diff -merge
-.pnp.cjs    linguist-generated=true
 .yarn/releases/** binary
 .yarn/plugins/** binary
