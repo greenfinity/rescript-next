@@ -3,121 +3,58 @@
   "description": "GF Rescript bindings for Next",
   "version": "0.4.4",
   "license": "MIT",
-  "homepage": "https://github.com/reebalazs/gf-rescript-next",
+  "homepage": "https://github.com/greenfinity/gf-rescript-next",
   "repository": {
     "type": "git",
-    "url": "git@github.com:reebalazs/gf-rescript-next.git"
+    "url": "git@github.com:greenfinity/gf-rescript-next.git"
   },
   "bugs": {
-    "url": "https://github.com/reebalazs/gf-rescript-next/issues"
+    "url": "https://github.com/greenfinity/gf-rescript-next/issues"
   },
   "author": "Balazs Ree <ree@greenfinity.hu>",
   "engines": {
-    "node": ">=18.17.1",
-    "yarn": ">=3.2.3"
+    "node": ">=22.12.0",
+    "yarn": ">=4.5.3"
   },
   "files": [
     "src",
-    "__tests__",
+    "__tests__/.gitkeep",
     "rescript.json"
   ],
   "scripts": {
     "changelog": "yarn auto-changelog -p && git add HISTORY.md",
-    "dev": "yarn rescript:dev",
-    "yalc:dev": "yarn rescript:dev & yarn nodemon -x \"yalc push\"",
-    "yalc:push": "yarn nodemon -e res -x \"yalc push\"",
     "build": "yarn rescript:build",
-    "rescript:build": "rescript build -with-deps",
-    "rescript:dev": "NINJA_ANSI_FORCED=1 RES_LOG=info rescript build -w -with-deps",
-    "test": "NODE_NO_WARNINGS=1 node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "jest:run": "yarn test --coverage",
-    "jest:dev": "yarn test --watchAll"
+    "rescript:clean": "yarn rescript clean",
+    "rescript:build": "yarn rescript build -with-deps",
+    "rescript:dev": "yarn rescript build -with-deps -w",
+    "test": "yarn vitest --run --coverage --allow-only",
+    "test:dev": "yarn vitest",
+    "yalc:dev": "yarn rescript:dev & yarn nodemon -x \"yalc push\"",
+    "yalc:push": "yarn nodemon -e res -x \"yalc push\""
   },
   "preferUnplugged": true,
   "peerDependencies": {
-    "@greenlabs/ppx-spice": "^0.2.1-rc.2",
-    "@rescript/react": "^0.11.0",
+    "@greenlabs/ppx-spice": "0.2.2",
+    "@rescript/react": "0.11.0",
     "next": "^14.0.3",
     "next-auth": "^4.23.1",
-    "rescript": "^11.1.0",
-    "rescript-logger": "^4.0.0"
+    "rescript": "^11.1.0"
   },
   "devDependencies": {
-    "@glennsl/rescript-jest": "^0.10.0",
-    "@greenlabs/ppx-spice": "^0.2.1-rc.2",
-    "@rescript/react": "^0.12.0-alpha.3",
+    "@greenfinity/rescript-vitest": "^0.1.0",
+    "@greenlabs/ppx-spice": "0.2.2",
+    "@rescript/react": "0.11.0",
+    "@vitest/coverage-v8": "2.1.8",
     "auto-changelog": "^2.4.0",
-    "bsb-js": "^1.1.7",
-    "eslint": "^7.30.0",
-    "eslint-config-next": "^11.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "jest": "^29.7.0",
-    "jest-cli": "^29.7.0",
+    "bs-loader": "^2.0.7",
+    "jsdom": "^26.0.0",
     "next": "^14.0.3",
     "next-auth": "^4.23.1",
+    "nodemon": "^3.0.1",
     "prettier": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rescript": "^11.1.0",
-    "rescript-logger": "^4.0.0"
-  },
-  "devDependenciesMeta": {
-    "@glennsl/rescript-jest@0.10.0": {
-      "unplugged": true
-    },
-    "@rescript/react@0.10.3": {
-      "unplugged": true
-    },
-    "@rescript/react@0.11.4": {
-      "unplugged": true
-    },
-    "rescript@10.0.1": {
-      "unplugged": true
-    },
-    "rescript-logger@3.1.0": {
-      "unplugged": true
-    },
-    "rescript@10.1.4": {
-      "unplugged": true
-    },
-    "rescript@11.0.0-rc.8": {
-      "unplugged": true
-    }
-  },
-  "dependenciesMeta": {
-    "@glennsl/rescript-jest@0.10.0": {
-      "unplugged": true
-    },
-    "@greenlabs/ppx-spice@0.1.10": {
-      "unplugged": true
-    },
-    "@greenlabs/ppx-spice@0.2.1-rc.2": {
-      "unplugged": true
-    },
-    "@rescript/react@0.10.3": {
-      "unplugged": true
-    },
-    "@rescript/react@0.11.0": {
-      "unplugged": true
-    },
-    "@rescript/react@0.11.4": {
-      "unplugged": true
-    },
-    "rescript@10.1.4": {
-      "unplugged": true
-    },
-    "rescript@11.0.0-rc.8": {
-      "unplugged": true
-    },
-    "rescript-logger@3.1.0": {
-      "unplugged": true
-    },
-    "rescript-logger@4.0.0": {
-      "unplugged": true
-    }
-  },
-  "dependencies": {
-    "nodemon": "^3.0.1"
+    "vitest": "^2.1.8"
   }
 }

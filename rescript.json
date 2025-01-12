@@ -1,5 +1,13 @@
 {
   "name": "@greenfinity/rescript-next",
+  "jsx": { "version": 4, "mode": "classic" },
+  "namespace": false,
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
+  "suffix": ".bs.mjs",
+  "package-specs": {
+    "module": "esmodule",
+    "in-source": true
+  },
   "sources": [
     {
       "dir": "src",
@@ -11,35 +19,10 @@
       "subdirs": true
     }
   ],
-  "jsx": {
-    "version": 4,
-    "mode": "classic"
-  },
   "warnings": {
+    "number": "-44",
     "error": "+101"
   },
-  "suffix": ".bs.mjs",
-  "namespace": false,
-  "bsc-flags": [
-    "-bs-super-errors",
-    "-bs-no-version-header"
-  ],
-  "package-specs": [
-    {
-      "module": "esmodule",
-      "in-source": true
-    }
-  ],
-  "bs-dependencies": [
-    "@rescript/react",
-    "rescript-logger",
-    "@greenlabs/ppx-spice"
-  ],
-  "ppx-flags": [
-    "rescript-logger/ppx",
-    "@greenlabs/ppx-spice/ppx"
-  ],
-  "bs-dev-dependencies": [
-    "@glennsl/rescript-jest"
-  ]
+  "bs-dependencies": ["@rescript/react", "@greenlabs/ppx-spice"],
+  "bs-dev-dependencies": ["@greenfinity/rescript-vitest"]
 }

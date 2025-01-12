@@ -1,5 +1,4 @@
 node_modules
 *.res
 dist
-*.bs.js
-*.proto.js
+*.bs.mjs
