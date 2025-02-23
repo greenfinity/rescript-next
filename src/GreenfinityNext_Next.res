@@ -333,8 +333,32 @@ module Headers = {
   @send external items: t => Js.Array.array_like<(string, string)> = "items"
 }
 
+/**
+ * Module for handling Next.js metadata configuration
+ */
 module Metadata = {
-  type icons = {icon?: string, apple?: string}
+  /**
+   * @example
+
+    let metadata: Metadata.t = {
+      title: "Greenfinity",
+      description: "Welcome to Greenfinity",
+      icons: [
+        {rel: "icon", url: "/favicon.ico", sizes: "32x32"},
+        {rel: "apple-touch-icon", url: "/icon-180.png"},
+        {rel: "icon", url: "/icon.svg", type_: "image/svg+xml"},
+      ],
+      manifest: "/manifest.webmanifest",
+    }
+
+   */
+  type icon = {
+    rel: string,
+    url: string,
+    @as("type") type_?: string,
+    sizes?: string,
+  }
+  type icons = array<icon>
   type t = {
     title?: string,
     description?: string,
