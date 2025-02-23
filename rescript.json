@@ -24,5 +24,6 @@
     "error": "+101"
   },
   "bs-dependencies": ["@rescript/react", "@greenlabs/ppx-spice"],
+  "ppx-flags": ["@greenlabs/ppx-spice/ppx"],
   "bs-dev-dependencies": ["@greenfinity/rescript-vitest"]
 }
