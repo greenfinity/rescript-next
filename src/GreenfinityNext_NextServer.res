@@ -25,20 +25,24 @@ module NextRequest = {
   type geo = {
     city: option<string>,
     country: option<string>,
+    flag: option<string>,
+    countryRegion: option<string>,
     region: option<string>,
     latitude: option<string>,
     longitude: option<string>,
+    postalCode: option<string>,
   }
 
   type t = {
     headers: GreenfinityNext_Fetch.Headers.t,
-    ip: option<string>,
-    geo: geo,
     nextUrl: URL.t,
     cookies: Cookies.t,
   }
 
   @send external json: t => promise<Js.Json.t> = "json"
+
+  @module("@vercel/functions") external geolocation: t => geo = "geolocation"
+  @module("@vercel/functions") external ipAddress: t => option<string> = "ipAddress"
 }
 
 module NextResponse = {
