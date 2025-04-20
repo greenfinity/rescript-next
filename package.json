@@ -36,25 +36,28 @@
   "peerDependencies": {
     "@greenlabs/ppx-spice": "0.2.2",
     "@rescript/react": "0.11.0",
-    "next": "^14.0.3",
-    "next-auth": "^4.23.1",
+    "@vercel/functions": "^2.0.0",
+    "next": "^15.3.1",
+    "next-auth": "^4.24.11",
     "rescript": "^11.1.0"
   },
   "devDependencies": {
     "@greenfinity/rescript-vitest": "^0.1.0",
     "@greenlabs/ppx-spice": "0.2.2",
     "@rescript/react": "0.11.0",
+    "@vercel/functions": "^2.0.0",
     "@vitest/coverage-v8": "2.1.8",
     "auto-changelog": "^2.4.0",
     "bs-loader": "^2.0.7",
     "jsdom": "^26.0.0",
-    "next": "^14.0.3",
-    "next-auth": "^4.23.1",
+    "next": "^15.3.1",
+    "next-auth": "^4.24.11",
     "nodemon": "^3.0.1",
     "prettier": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rescript": "^11.1.0",
     "vitest": "^2.1.8"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
