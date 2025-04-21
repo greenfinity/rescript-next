@@ -1,5 +1,15 @@
 module Req = {
-  type t
+  // backport cookies, headers, nextUrl, geolocation, ipAddress from the app router
+  module Cookies = GreenfinityNext_NextServer.NextRequest.Cookies
+  module URL = GreenfinityNext_NextServer.NextRequest.URL
+  type geo = GreenfinityNext_NextServer.NextRequest.geo
+  type t = {
+    headers: GreenfinityNext_Fetch.Headers.t,
+    nextUrl: URL.t,
+    cookies: Cookies.t,
+  }
+  @module("@vercel/functions") external geolocation: t => geo = "geolocation"
+  @module("@vercel/functions") external ipAddress: t => option<string> = "ipAddress"
 
   @set_index external set: (t, string, 'a) => unit = ""
   @get_index external get: (t, string) => Js.Nullable.t<'a> = ""
