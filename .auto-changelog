@@ -4,5 +4,5 @@
   "unreleased": true,
   "commitLimit": false,
   "startingDate": "2025-01-01",
-  "ignoreCommitPattern": "^(.*)(Release|release)(.*)$"
+  "ignoreCommitPattern": "^(.*)(Release|release|Chore|chore)(.*)$"
 }
