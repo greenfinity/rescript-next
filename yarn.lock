@@ -480,7 +480,7 @@ __metadata:
   dependencies:
     "@greenfinity/rescript-vitest": "npm:^0.1.0"
     "@greenlabs/ppx-spice": "npm:0.2.2"
-    "@rescript/react": "npm:0.11.0"
+    "@rescript/react": "npm:^0.12.0-alpha.3"
     "@vercel/functions": "npm:^2.0.0"
     "@vitest/coverage-v8": "npm:2.1.8"
     auto-changelog: "npm:^2.4.0"
@@ -496,7 +496,7 @@ __metadata:
     vitest: "npm:^2.1.8"
   peerDependencies:
     "@greenlabs/ppx-spice": 0.2.2
-    "@rescript/react": 0.11.0
+    "@rescript/react": ^0.12.0-alpha.3
     "@vercel/functions": ^2.0.0
     next: ^15.3.1
     next-auth: ^4.24.11
@@ -873,13 +873,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/react@npm:0.11.0":
-  version: 0.11.0
-  resolution: "@rescript/react@npm:0.11.0"
+"@rescript/react@npm:^0.12.0-alpha.3":
+  version: 0.12.2
+  resolution: "@rescript/react@npm:0.12.2"
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: 10/f66bccf4260e26243790ffcc729e26f422bdc9770e2d01f7539320a04fdf93d33f2c9ba9e12b9a4d3b0383fc60299515a7ccfb9076bbbd0c2b4e53215d5eda8f
+  checksum: 10/021f2bdaa611a71a85fd8cd27331b76625236f418f0118006d68707d173dcd5259fdf7f9bf34f3be02118be38616f5b20a3328c0f4e4cccb6c50ae8664e51c0b
   languageName: node
   linkType: hard
 
