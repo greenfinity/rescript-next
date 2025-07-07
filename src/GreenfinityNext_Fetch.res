@@ -24,9 +24,9 @@ module FetchResponse = {
   type t = {
     ok: bool,
     status: int,
-    arrayBuffer: unit => Js.Promise2.t<Js.TypedArray2.ArrayBuffer.t>,
-    text: unit => Js.Promise2.t<string>,
-    json: unit => Js.Promise2.t<Js.Json.t>,
+    arrayBuffer: unit => promise<Js.TypedArray2.ArrayBuffer.t>,
+    text: unit => promise<string>,
+    json: unit => promise<Js.Json.t>,
   }
   let jsonResult = async response => {
     let text = await response.text()
@@ -43,9 +43,9 @@ module FetchResponse = {
   let json = async response => await response.json()
 }
 
-@val external fetch: (string, {..}) => Js.Promise2.t<FetchResponse.t> = "fetch"
+@val external fetch: (string, {..}) => promise<FetchResponse.t> = "fetch"
 
-let fetchJson = (url: string, body: Js.Json.t) => {
+let fetchJson = async (url: string, body: Js.Json.t) => {
   let options = {
     "method": #put,
     "headers": {
@@ -53,12 +53,11 @@ let fetchJson = (url: string, body: Js.Json.t) => {
     },
     "body": body->Js.Json.stringify,
   }
-  fetch(url, options)->Js.Promise2.then(res =>
-    switch res.ok {
-    | true => res.json()
-    | false => raise(ApiError(res.status->apiErrorFromStatus))
-    }
-  )
+  let res = await fetch(url, options)
+  switch res.ok {
+  | true => await res.json()
+  | false => raise(ApiError(res.status->apiErrorFromStatus))
+  }
 }
 
 let fetchJson0 = url => fetchJson(url, Js.Json.null)
