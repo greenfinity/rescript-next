@@ -1,4 +1,3 @@
-open Js.Promise2
 module Next = GreenfinityNext_Next
 
 type user = {
@@ -64,19 +63,16 @@ external signInWithRawProviderOptions: (string, {..}, {..}) => promise<signInRes
 
 type getSessionRequest = {req: Next.Req.t}
 @module("next-auth/react")
-external _getSession: getSessionRequest => Js.Promise2.t<Js.Nullable.t<sessionData>> = "getSession"
+external _getSession: getSessionRequest => promise<Js.Nullable.t<sessionData>> = "getSession"
 
-let getSession = req => _getSession({req: req})->then(r => r->Js.Nullable.toOption->resolve)
+let getSession = async req => (await _getSession({req: req}))->Js.Nullable.toOption
 
 @module("next-auth/next")
-external _getServerSession: (
-  Next.Req.t,
-  Next.Res.t,
-  _,
-) => Js.Promise2.t<Js.Nullable.t<sessionData>> = "getServerSession"
+external _getServerSession: (Next.Req.t, Next.Res.t, _) => promise<Js.Nullable.t<sessionData>> =
+  "getServerSession"
 
-let getServerSession = (req, res, authOptions) =>
-  _getServerSession(req, res, authOptions)->then(r => r->Js.Nullable.toOption->resolve)
+let getServerSession = async (req, res, authOptions) =>
+  (await _getServerSession(req, res, authOptions))->Js.Nullable.toOption
 
 let emailOfSession = (sessionData: option<sessionData>) =>
   switch sessionData {
