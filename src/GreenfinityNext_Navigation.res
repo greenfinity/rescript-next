@@ -8,6 +8,8 @@ external redirect: (string, ~type_: type_=?) => unit = "redirect"
 @module("next/navigation")
 external notFound: unit => unit = "notFound"
 @module("next/navigation")
+external unauthorized: unit => unit = "unauthorized"
+@module("next/navigation")
 external useSelectedLayoutSegment: (~parallelRoutesKey: string=?) => string =
   "useSelectedLayoutSegment"
 @module("next/navigation")

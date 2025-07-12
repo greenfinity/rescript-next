@@ -322,10 +322,14 @@ module Image = {
 
 module Headers = {
   type t
-  @new @module("next/headers") external make: unit => t = "headers"
+  @deprecated("Use makePromise instead and await the result.") @new @module("next/headers")
+  external make: unit => t = "headers"
+  @new @module("next/headers") external makeAsync: unit => promise<t> = "headers"
   // workaround for "cannot be used from client component" error
   @module("./GreenfinityNext_Next.mjs")
+  @deprecated("Use makePromiseWithRequire instead and await the result.")
   external makeWithRequire: unit => t = "headersMakeWithRequire"
+  external makeAsyncWithRequire: unit => promise<t> = "headersMakeWithRequire"
   @send external _get: (t, string) => Js.Nullable.t<string> = "get"
   let get = (headers, k) => headers->_get(k)->Js.Nullable.toOption
   @send external keys: t => Js.Array.array_like<string> = "keys"
