@@ -12,19 +12,11 @@ module Req = {
 module Res = {
   type t
 
+  type statusCode = GreenfinityNext_Errors.apiErrorStatus
+
   // https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
   @set
-  external statusCode: (
-    t,
-    @int
-    [
-      | @as(200) #Success
-      | @as(400) #BadRequest
-      | @as(403) #Forbidden
-      | @as(404) #NotFound
-      | @as(500) #ServerError
-    ],
-  ) => unit = "statusCode"
+  external statusCode: (t, statusCode) => unit = "statusCode"
 
   @send external setHeader: (t, string, string) => unit = "setHeader"
   @send external sendString: (t, string) => unit = "send"
@@ -300,7 +292,7 @@ module Image = {
     ~layout: [#fixed | #intrinsic | #responsive | #fill]=?,
     ~loader: loaderOptions => string=?,
     ~loading: [
-      | @as("lazy") #lazy_
+      | #"lazy"
       | #eager
     ]=?,
     ~priority: bool=?,

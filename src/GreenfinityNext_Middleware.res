@@ -4,7 +4,7 @@ module Next = GreenfinityNext_Next
 let default: (Next.Req.t, Next.Res.t, 'a) => 'b = async (req, res, processIt) => {
   let v = await processIt(req->Next.Req.bodyAsJson)
   try {
-    res->Next.Res.statusCode(#Success)
+    res->Next.Res.statusCode(Success)
     res->Next.Res.setHeader("Content-Type", "application/json")
     res->Next.Res.sendJson(v)
     ignore()
@@ -17,10 +17,10 @@ let default: (Next.Req.t, Next.Res.t, 'a) => 'b = async (req, res, processIt) =>
     }
 
   | e => {
-      res->Next.Res.statusCode(#ServerError)
+      res->Next.Res.statusCode(ServerError)
       res->Next.Res.setHeader("Content-Type", "application/json")
       res->Next.Res.sendJson(Js.Json.null)
-      raise(e)
+      throw(e)
     }
   }
 }

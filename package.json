@@ -25,8 +25,9 @@
     "changelog": "yarn auto-changelog -p && git add HISTORY.md",
     "build": "yarn rescript:build",
     "rescript:clean": "yarn rescript clean",
-    "rescript:build": "yarn rescript build -with-deps",
-    "rescript:dev": "yarn rescript build -with-deps -w",
+    "rescript:build": "yarn rescript build",
+    "rescript:build:dev": "yarn rescript build --dev",
+    "rescript:dev": "yarn rescript watch --dev",
     "test": "yarn vitest --run --coverage --allow-only",
     "test:dev": "yarn vitest",
     "yalc:dev": "yarn rescript:dev & yarn nodemon -x \"yalc push\"",
@@ -34,17 +35,17 @@
   },
   "preferUnplugged": true,
   "peerDependencies": {
-    "@greenlabs/ppx-spice": "0.2.2",
-    "@rescript/react": "^0.12.0-alpha.3",
+    "@greenlabs/ppx-spice": "0.2.8",
+    "@rescript/react": "^0.14.0-rc.1",
     "@vercel/functions": "^2.0.0",
     "next": "^15.3.1",
     "next-auth": "^4.24.11",
-    "rescript": "^11.1.0"
+    "rescript": "^12.0.0-beta.4"
   },
   "devDependencies": {
-    "@greenfinity/rescript-vitest": "^0.1.0",
-    "@greenlabs/ppx-spice": "0.2.2",
-    "@rescript/react": "^0.12.0-alpha.3",
+    "@greenfinity/rescript-vitest": "^0.2.0",
+    "@greenlabs/ppx-spice": "0.2.8",
+    "@rescript/react": "^0.14.0-rc.1",
     "@vercel/functions": "^2.0.0",
     "@vitest/coverage-v8": "2.1.8",
     "auto-changelog": "^2.4.0",
@@ -56,7 +57,7 @@
     "prettier": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rescript": "^11.1.0",
+    "rescript": "^12.0.0-beta.4",
     "vitest": "^2.1.8"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
