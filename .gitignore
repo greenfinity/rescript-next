@@ -15,3 +15,4 @@ lib/js/*
 !lib/js/src
 coverage
 .coveralls.yml
+**/lib

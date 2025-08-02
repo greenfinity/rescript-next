@@ -31,11 +31,11 @@ module FetchResponse = {
   let jsonResult = async response => {
     let text = await response.text()
     try Js.Json.parseExn(text)->Result.Ok catch {
-    | Js.Exn.Error(obj) =>
-      switch Js.Exn.name(obj) {
+    | JsExn(obj) =>
+      switch JsExn.name(obj) {
       | Some("SyntaxError") => Result.Error(text)
-      | Some(_) => raise(JsonDecodeError(obj->Js.Exn.message->Option.getWithDefault("")))
-      | None => raise(JsonDecodeError(""))
+      | Some(_) => throw(JsonDecodeError(obj->JsExn.message->Option.getWithDefault("")))
+      | None => throw(JsonDecodeError(""))
       }
     | _ => Result.Error(text)
     }
@@ -56,7 +56,7 @@ let fetchJson = async (url: string, body: Js.Json.t) => {
   let res = await fetch(url, options)
   switch res.ok {
   | true => await res.json()
-  | false => raise(ApiError(res.status->apiErrorFromStatus))
+  | false => throw(ApiError(res.status->apiErrorFromStatus))
   }
 }
 
