@@ -63,6 +63,17 @@ module NextResponse = {
   external make: ('a, ~options: options=?) => promise<t> = "NextResponse"
   @module("next/server") @scope("NextResponse")
   external json: (Js.Json.t, ~options: options=?) => promise<t> = "json"
+
+  /* `next` can be called either with
+   * `{request: {headers}}` or with `{headers}`.
+   */
+  type nextOptionsHeaders = {headers: GreenfinityNext_Fetch.Headers.t}
+  type nextOptions = {
+    request?: nextOptionsHeaders,
+    headers?: GreenfinityNext_Fetch.Headers.t,
+  }
+  @module("next/server") @scope("NextResponse")
+  external next: nextOptions => t = "next"
 }
 
 module Middleware = {
