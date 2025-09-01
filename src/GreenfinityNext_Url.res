@@ -14,7 +14,7 @@ module URLSearchParams = {
   @new external make: unit => t = "URLSearchParams"
   @new external fromQuery: string => t = "URLSearchParams"
   @send external getAll: (t, string) => array<string> = "getAll"
-  @send external get: (t, string) => option<string> = "get"
+  @send @return(nullable) external get: (t, string) => option<string> = "get"
   @send external keys: t => Js.Array.array_like<string> = "keys"
   @send external values: t => Js.Array.array_like<string> = "values"
   @send external items: t => Js.Array.array_like<(string, string)> = "items"
