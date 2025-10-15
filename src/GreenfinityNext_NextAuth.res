@@ -1,18 +1,5 @@
 module Next = GreenfinityNext_Next
-
-type user = {
-  name: option<string>,
-  email: option<string>,
-  image: option<string>,
-}
-
-type sessionData = {
-  user: option<user>,
-  expires?: Js.Date.t,
-}
-type session = sessionData
-
-type authOptions
+open GreenfinityNext_NextAuthTypes
 
 module SessionProvider = {
   @module("next-auth/react") @react.component
@@ -66,23 +53,6 @@ type getSessionRequest = {req: Next.Req.t}
 external _getSession: getSessionRequest => promise<Js.Nullable.t<sessionData>> = "getSession"
 
 let getSession = async req => (await _getSession({req: req}))->Js.Nullable.toOption
-
-@module("next-auth/next")
-external _getServerSession: (Next.Req.t, Next.Res.t, _) => promise<Js.Nullable.t<sessionData>> =
-  "getServerSession"
-
-let getServerSession = async (req, res, authOptions) =>
-  (await _getServerSession(req, res, authOptions))->Js.Nullable.toOption
-
-let emailOfSession = (sessionData: option<sessionData>) =>
-  switch sessionData {
-  | Some(sessionData) =>
-    switch sessionData.user {
-    | Some(user) => user.email
-    | None => None
-    }
-  | None => None
-  }
 
 type signOutOptions = {
   redirect?: bool,
