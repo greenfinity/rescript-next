@@ -54,12 +54,13 @@ external _getSession: getSessionRequest => promise<Js.Nullable.t<sessionData>> =
 
 let getSession = async req => (await _getSession({req: req}))->Js.Nullable.toOption
 
+type signOutResponse = {url: string}
 type signOutOptions = {
   redirect?: bool,
   callbackUrl?: string,
 }
 @module("next-auth/react")
-external _signOut: signOutOptions => unit = "signOut"
+external _signOut: signOutOptions => promise<signOutResponse> = "signOut"
 let signOut = (~redirect: option<bool>=?, ~callbackUrl: option<string>=?) =>
   _signOut({?redirect, ?callbackUrl})
 
