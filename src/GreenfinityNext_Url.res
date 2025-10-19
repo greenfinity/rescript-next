@@ -4,7 +4,7 @@ module SearchParams = {
   type value
   external unsafeArray: value => array<string> = "%identity"
 
-  type t = Dict.t<value>
+  type t = dict<value>
   let all = value => Array.concat([], value->unsafeArray)
   let first = value => (value->all)[0]
 }
