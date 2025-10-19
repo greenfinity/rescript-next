@@ -59,7 +59,7 @@ module GetServerSideProps = {
 
   // The definition of a getServerSideProps function
   type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => promise<
-    promise<'props>,
+    result<'props>,
   >
 }
 
@@ -79,7 +79,7 @@ module GetStaticProps = {
 
   // The definition of a getStaticProps function
   type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => promise<
-    promise<'props>,
+    return<'props>,
   >
 }
 

@@ -14,9 +14,9 @@ module Headers = {
   @send external _get: (t, string) => nullable<string> = "get"
   let get = (t, string) => t->_get(string)->Nullable.toOption
   @send external has: (t, string) => bool = "has"
-  @send external keys: t => Array.t<string> = "keys"
-  @send external values: t => Array.t<string> = "values"
-  @send external entries: t => Array.t<(string, string)> = "entries"
+  @send external keys: t => array<string> = "keys"
+  @send external values: t => array<string> = "values"
+  @send external entries: t => array<(string, string)> = "entries"
   // missing forEach, getSetCookie
 }
 
