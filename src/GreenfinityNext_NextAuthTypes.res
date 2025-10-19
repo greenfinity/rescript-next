@@ -6,7 +6,7 @@ type user = {
 
 type sessionData = {
   user: option<user>,
-  expires?: Js.Date.t,
+  expires?: Date.t,
 }
 type session = sessionData
 

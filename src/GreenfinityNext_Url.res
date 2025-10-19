@@ -2,10 +2,10 @@
 
 module SearchParams = {
   type value
-  external unsafeArray: value => Js.Array2.t<string> = "%identity"
+  external unsafeArray: value => array<string> = "%identity"
 
-  type t = Js.Dict.t<value>
-  let all = value => Js.Array2.concat([], value->unsafeArray)
+  type t = Dict.t<value>
+  let all = value => Array.concat([], value->unsafeArray)
   let first = value => (value->all)[0]
 }
 
@@ -15,9 +15,9 @@ module URLSearchParams = {
   @new external fromQuery: string => t = "URLSearchParams"
   @send external getAll: (t, string) => array<string> = "getAll"
   @send @return(nullable) external get: (t, string) => option<string> = "get"
-  @send external keys: t => Js.Array.array_like<string> = "keys"
-  @send external values: t => Js.Array.array_like<string> = "values"
-  @send external items: t => Js.Array.array_like<(string, string)> = "items"
+  @send external keys: t => array<string> = "keys"
+  @send external values: t => array<string> = "values"
+  @send external items: t => array<(string, string)> = "items"
   @send external toString: t => string = "toString"
 }
 

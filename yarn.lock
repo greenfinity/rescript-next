@@ -492,7 +492,7 @@ __metadata:
     prettier: "npm:^2.3.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    rescript: "npm:^12.0.0-beta.4"
+    rescript: "npm:^12.0.0-beta.6"
     vitest: "npm:^2.1.8"
   peerDependencies:
     "@greenlabs/ppx-spice": 0.2.8
@@ -500,7 +500,7 @@ __metadata:
     "@vercel/functions": ^2.0.0
     next: ^15.3.1
     next-auth: ^4.24.11
-    rescript: ^12.0.0-beta.4
+    rescript: ^12.0.0-beta.6
   languageName: unknown
   linkType: soft
 
@@ -875,30 +875,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/darwin-arm64@npm:12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "@rescript/darwin-arm64@npm:12.0.0-beta.4"
+"@rescript/darwin-arm64@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/darwin-arm64@npm:12.0.0-rc.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rescript/darwin-x64@npm:12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "@rescript/darwin-x64@npm:12.0.0-beta.4"
+"@rescript/darwin-x64@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/darwin-x64@npm:12.0.0-rc.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@rescript/linux-arm64@npm:12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "@rescript/linux-arm64@npm:12.0.0-beta.4"
+"@rescript/linux-arm64@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/linux-arm64@npm:12.0.0-rc.2"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rescript/linux-x64@npm:12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "@rescript/linux-x64@npm:12.0.0-beta.4"
+"@rescript/linux-x64@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/linux-x64@npm:12.0.0-rc.2"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -913,9 +913,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/win32-x64@npm:12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "@rescript/win32-x64@npm:12.0.0-beta.4"
+"@rescript/runtime@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/runtime@npm:12.0.0-rc.2"
+  checksum: 10/92373b8a1603217b4ef43a358564a884f3b02f235189b93319f0538799dadf6ecbca8d3bac1c54bed612943c352aa25e613696e58a73a1ffd5fbde516bb9e2d5
+  languageName: node
+  linkType: hard
+
+"@rescript/win32-x64@npm:12.0.0-rc.2":
+  version: 12.0.0-rc.2
+  resolution: "@rescript/win32-x64@npm:12.0.0-rc.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3129,15 +3136,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rescript@npm:^12.0.0-beta.4":
-  version: 12.0.0-beta.4
-  resolution: "rescript@npm:12.0.0-beta.4"
+"rescript@npm:^12.0.0-beta.6":
+  version: 12.0.0-rc.2
+  resolution: "rescript@npm:12.0.0-rc.2"
   dependencies:
-    "@rescript/darwin-arm64": "npm:12.0.0-beta.4"
-    "@rescript/darwin-x64": "npm:12.0.0-beta.4"
-    "@rescript/linux-arm64": "npm:12.0.0-beta.4"
-    "@rescript/linux-x64": "npm:12.0.0-beta.4"
-    "@rescript/win32-x64": "npm:12.0.0-beta.4"
+    "@rescript/darwin-arm64": "npm:12.0.0-rc.2"
+    "@rescript/darwin-x64": "npm:12.0.0-rc.2"
+    "@rescript/linux-arm64": "npm:12.0.0-rc.2"
+    "@rescript/linux-x64": "npm:12.0.0-rc.2"
+    "@rescript/runtime": "npm:12.0.0-rc.2"
+    "@rescript/win32-x64": "npm:12.0.0-rc.2"
   dependenciesMeta:
     "@rescript/darwin-arm64":
       optional: true
@@ -3155,7 +3163,7 @@ __metadata:
     rescript: cli/rescript.js
     rescript-legacy: cli/rescript-legacy.js
     rescript-tools: cli/rescript-tools.js
-  checksum: 10/2dbb8cbd28e774e5039d4bc2bb91b523c1fdf4ab5fedafcb8fa1ee3367044fba422ea67707265c01dc6782b86d2a14c63c34a5c5c2eb43bffb5f9f73505955a1
+  checksum: 10/a985949a67ad699edfbaeb1ab25b4370fbf2439de0092dd5beb896887a06a9bc055e74ef14c88b9910cb620355f439fe4375772d5312129a83731f86e2d4578a
   languageName: node
   linkType: hard
 

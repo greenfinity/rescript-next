@@ -35,7 +35,7 @@ external signInWithProvider: string => unit = "signIn"
 external signInWithProviderOptions: (string, {..}, {..}) => promise<{..}> = "signIn"
 
 type rawSignInResult = {
-  error: Js.nullable<string>,
+  error: nullable<string>,
   status: int,
   ok: bool,
   url?: string,
@@ -50,9 +50,9 @@ external signInWithRawProviderOptions: (string, {..}, {..}) => promise<signInRes
 
 type getSessionRequest = {req: Next.Req.t}
 @module("next-auth/react")
-external _getSession: getSessionRequest => promise<Js.Nullable.t<sessionData>> = "getSession"
+external _getSession: getSessionRequest => promise<Nullable.t<sessionData>> = "getSession"
 
-let getSession = async req => (await _getSession({req: req}))->Js.Nullable.toOption
+let getSession = async req => (await _getSession({req: req}))->Nullable.toOption
 
 type signOutResponse = {url: string}
 type signOutOptions = {
@@ -88,7 +88,7 @@ external _signInWithInternalProviderNoRedirect: (
   {..},
 ) => promise<rawSignInResult> = "signIn"
 let signInWithInternalProviderNoRedirect = (provider, options, authParams) => {
-  let mergedOptions = Js.Obj.assign(Js.Obj.empty(), options)
+  let mergedOptions = Object.assign(Object.make(), options)
   mergedOptions["redirect"] = false
   _signInWithInternalProviderNoRedirect(provider, mergedOptions, authParams)
 }
@@ -108,5 +108,5 @@ let signInWithCredentials = (~username, ~password) =>
   signInWithInternalProviderNoRedirect(
     #credentials,
     {"username": username, "password": password},
-    Js.Obj.empty(),
+    Object.make(),
   )

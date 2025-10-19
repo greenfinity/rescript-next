@@ -1,7 +1,7 @@
 module type Config = {
   type t
-  let t_encode: t => Js.Json.t
-  let t_decode: Js.Json.t => Belt.Result.t<t, Spice.decodeError>
+  let t_encode: t => JSON.t
+  let t_decode: JSON.t => Belt.Result.t<t, Spice.decodeError>
   let assignFromStorage: {..} => {..}
   let assignToStorage: {..} => {..}
 }
@@ -9,12 +9,12 @@ module type Config = {
 exception SerializeError(Spice.decodeError)
 
 module Make = (Config: Config) => {
-  external fromJson: Js.Json.t => {..} = "%identity"
-  external toJson: {..} => Js.Json.t = "%identity"
+  external fromJson: JSON.t => {..} = "%identity"
+  external toJson: {..} => JSON.t = "%identity"
   external toJs: 't => {..} = "%identity"
-  external fromJs: Js.t<'a> => Config.t = "%identity"
-  let convertFrom = (o: Js.t<'a>): Js.t<'a> =>
-    Js.Obj.empty()->Js.Obj.assign(o)->Js.Obj.assign(Config.assignFromStorage(o))
+  external fromJs: {..} => Config.t = "%identity"
+  let convertFrom = (o: {..}): {..} =>
+    Object.make()->Object.assign(o)->Object.assign(Config.assignFromStorage(o))
   let fromStorage = (o): Config.t =>
     switch o->convertFrom->toJson->Config.t_decode {
     | Belt.Result.Ok(req) => req
@@ -25,20 +25,20 @@ module Make = (Config: Config) => {
     | Some(o) => o->fromStorage->Some
     | _ => None
     }
-  let fromStorageNullable = (o): option<Config.t> => o->Js.Null.toOption->fromStorageOption
-  let convertTo = (o: Js.t<'a>): Js.t<'a> =>
-    Js.Obj.empty()->Js.Obj.assign(o)->Js.Obj.assign(Config.assignToStorage(o))
+  let fromStorageNullable = (o): option<Config.t> => o->Null.toOption->fromStorageOption
+  let convertTo = (o: {..}): {..} =>
+    Object.make()->Object.assign(o)->Object.assign(Config.assignToStorage(o))
   let toStorage = (o: Config.t) => o->Config.t_encode->fromJson->convertTo
 }
 
 @deprecated("ResultField module will be removed")
 module ResultField = {
   // let int64 = o => o->Int64.of_string->Int64.float_of_bits
-  let date = o => o->Js.Date.toISOString
+  let date = o => o->Date.toISOString
   let option = (o, inner) =>
-    switch Js.Nullable.isNullable(o) {
-    | false => o->Js.Nullable.toOption->Belt.Option.getExn->inner->Js.Nullable.return
-    | _ => Js.Nullable.null
+    switch Nullable.isNullable(o) {
+    | false => o->Nullable.toOption->Belt.Option.getExn->inner->Nullable.make
+    | _ => Nullable.null
     }
 }
 
