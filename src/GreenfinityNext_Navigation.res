@@ -18,7 +18,7 @@ external useSelectedLayoutSegments: (~parallelRoutesKey: string=?) => array<stri
 @module("next/navigation")
 external usePathname: unit => string = "usePathname"
 @module("next/navigation")
-external useParams: unit => Js.Dict.t<string> = "useParams"
+external useParams: unit => dict<string> = "useParams"
 
 module Router = {
   type t = {

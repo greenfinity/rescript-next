@@ -7,7 +7,7 @@ module NextRequest = {
     type t
     @send external set: (t, string, string) => unit = "set"
     @send external get: (t, string) => string = "get"
-    @send external getAll: t => Js.Dict.t<string> = "getAll"
+    @send external getAll: t => dict<string> = "getAll"
     @send external delete: (t, string) => unit = "delete"
     @send external has: (t, string) => bool = "has"
     @send external clear: t => unit = "clear"
@@ -39,7 +39,7 @@ module NextRequest = {
     cookies: Cookies.t,
   }
 
-  @send external json: t => promise<Js.Json.t> = "json"
+  @send external json: t => promise<JSON.t> = "json"
 
   @module("@vercel/functions") external geolocation: t => geo = "geolocation"
   @module("@vercel/functions") external ipAddress: t => option<string> = "ipAddress"
@@ -62,7 +62,7 @@ module NextResponse = {
   @module("next/server") @new
   external make: ('a, ~options: options=?) => promise<t> = "NextResponse"
   @module("next/server") @scope("NextResponse")
-  external json: (Js.Json.t, ~options: options=?) => promise<t> = "json"
+  external json: (JSON.t, ~options: options=?) => promise<t> = "json"
 
   /* `next` can be called either with
    * `{request: {headers}}` or with `{headers}`.

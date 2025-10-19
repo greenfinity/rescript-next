@@ -12,14 +12,14 @@ let default: (Next.Req.t, Next.Res.t, 'a) => 'b = async (req, res, processIt) =>
   | Errors.ApiError(statusCode) => {
       res->Next.Res.statusCode(statusCode)
       res->Next.Res.setHeader("Content-Type", "application/json")
-      res->Next.Res.sendJson(Js.Json.null)
+      res->Next.Res.sendJson(JSON.Encode.null)
       ignore()
     }
 
   | e => {
       res->Next.Res.statusCode(ServerError)
       res->Next.Res.setHeader("Content-Type", "application/json")
-      res->Next.Res.sendJson(Js.Json.null)
+      res->Next.Res.sendJson(JSON.Encode.null)
       throw(e)
     }
   }

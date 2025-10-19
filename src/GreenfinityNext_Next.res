@@ -2,10 +2,10 @@ module Req = {
   type t
 
   @set_index external set: (t, string, 'a) => unit = ""
-  @get_index external get: (t, string) => Js.Nullable.t<'a> = ""
+  @get_index external get: (t, string) => Nullable.t<'a> = ""
   @get_index external get_UNSAFE: (t, string) => 'a = ""
-  @deprecated("Use bodyAsJson") @get external body: t => Js.Nullable.t<'a> = "body"
-  @get external bodyAsJson: t => Js.Json.t = "body"
+  @deprecated("Use bodyAsJson") @get external body: t => Nullable.t<'a> = "body"
+  @get external bodyAsJson: t => JSON.t = "body"
   @get external url: t => string = "url"
 }
 
@@ -26,16 +26,16 @@ module Res = {
   @send external end: t => unit = "end"
   // For some reason explicit conversion is needed to send anything else than
   // an object, such as a standalone string or null.
-  let sendJson = (res, json) => res->sendString(json->Js.Json.stringify)
+  let sendJson = (res, json) => res->sendString(json->JSON.stringify)
 }
 
 module GetServerSideProps = {
   // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
   type context<'props, 'params, 'previewData> = {
     params: 'params,
-    query: Js.Dict.t<string>,
+    query: dict<string>,
     preview: option<bool>, // preview is true if the page is in the preview mode and undefined otherwise.
-    previewData: Js.Nullable.t<'previewData>,
+    previewData: Nullable.t<'previewData>,
     req: Req.t,
     res: Res.t,
   }
@@ -58,8 +58,8 @@ module GetServerSideProps = {
   }
 
   // The definition of a getServerSideProps function
-  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<
-    result<'props>,
+  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => promise<
+    promise<'props>,
   >
 }
 
@@ -68,7 +68,7 @@ module GetStaticProps = {
   type context<'props, 'params, 'previewData> = {
     params: 'params,
     preview: option<bool>, // preview is true if the page is in the preview mode and undefined otherwise.
-    previewData: Js.Nullable.t<'previewData>,
+    previewData: Nullable.t<'previewData>,
   }
 
   type return<'props> = {
@@ -78,8 +78,8 @@ module GetStaticProps = {
   }
 
   // The definition of a getStaticProps function
-  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<
-    return<'props>,
+  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => promise<
+    promise<'props>,
   >
 }
 
@@ -94,7 +94,7 @@ module GetStaticPaths = {
   }
 
   // The definition of a getStaticPaths function
-  type genericT<'params, 'fallback> = unit => Js.Promise.t<genericReturn<'params, 'fallback>>
+  type genericT<'params, 'fallback> = unit => promise<genericReturn<'params, 'fallback>>
 
   // default: with fallback blocking
   type return<'params> = genericReturn<'params, [#blocking]>
@@ -157,12 +157,12 @@ module Router = {
     asPath: string,
     events: Events.t,
     pathname: string,
-    query: Js.Dict.t<string>,
+    query: dict<string>,
   }
 
   type pathObj = {
     pathname: string,
-    query: Js.Dict.t<string>,
+    query: dict<string>,
   }
 
   @send external push: (router, string) => unit = "push"
@@ -270,9 +270,9 @@ module Dynamic = {
   }
 
   @module("next/dynamic")
-  external dynamic: (unit => Js.Promise.t<'a>, options) => 'a = "default"
+  external dynamic: (unit => promise<'a>, promise<'a>) => 'a = "default"
 
-  @val external import_: string => Js.Promise.t<'a> = "import"
+  @val external import_: string => promise<'a> = "import"
 }
 
 // https://nextjs.org/docs/api-reference/next/image
@@ -292,7 +292,7 @@ module Image = {
     ~layout: [#fixed | #intrinsic | #responsive | #fill]=?,
     ~loader: loaderOptions => string=?,
     ~loading: [
-      | #"lazy"
+      | #lazy
       | #eager
     ]=?,
     ~priority: bool=?,
@@ -329,14 +329,14 @@ module Headers = {
   @module("./GreenfinityNext_Next.mjs")
   external makeAsyncWithRequire: unit => promise<t> = "headersMakeWithRequire"
 
-  @send external _get: (t, string) => Js.Nullable.t<string> = "get"
-  let get = (headers, k) => headers->_get(k)->Js.Nullable.toOption
+  @send external _get: (t, string) => Nullable.t<string> = "get"
+  let get = (headers, k) => headers->_get(k)->Nullable.toOption
 
-  @send external keys: t => Js.Array.array_like<string> = "keys"
+  @send external keys: t => array<string> = "keys"
 
-  @send external values: t => Js.Array.array_like<string> = "values"
+  @send external values: t => array<string> = "values"
 
-  @send external items: t => Js.Array.array_like<(string, string)> = "items"
+  @send external items: t => array<(string, string)> = "items"
 }
 
 /**
