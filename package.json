@@ -26,8 +26,8 @@
     "build": "yarn rescript:build",
     "rescript:clean": "yarn rescript clean",
     "rescript:build": "yarn rescript build",
-    "rescript:build:dev": "yarn rescript build --dev",
-    "rescript:dev": "yarn rescript watch --dev",
+    "rescript:build:dev": "yarn rescript build",
+    "rescript:dev": "yarn rescript watch",
     "test": "yarn vitest --run --coverage --allow-only",
     "test:dev": "yarn vitest",
     "yalc:dev": "yarn rescript:dev & yarn nodemon -x \"yalc push\"",
@@ -40,7 +40,7 @@
     "@vercel/functions": "^2.0.0",
     "next": "^15.3.1",
     "next-auth": "^4.24.11",
-    "rescript": "^12.0.0-beta.6"
+    "rescript": "^12.0.0-rc.2"
   },
   "devDependencies": {
     "@greenfinity/rescript-vitest": "^0.2.0",
@@ -57,7 +57,7 @@
     "prettier": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rescript": "^12.0.0-beta.6",
+    "rescript": "^12.0.0-rc.2",
     "vitest": "^2.1.8"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
