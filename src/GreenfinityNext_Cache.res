@@ -4,7 +4,19 @@ type cacheType =
 
 @module("next/cache")
 external revalidatePath: (string, ~_type: cacheType=?) => unit = "revalidatePath"
+
+type revalidateProfileOptions = {expire?: int}
+@unboxed
+type revalidateProfile = | @as("max") Max | Options(revalidateProfileOptions)
+
+@module("next/cache")
+external revalidateTag: (string, ~profile: revalidateProfile) => unit = "revalidateTag"
+
+@module("next/cache")
+external updateTag: string => unit = "updateTag"
+
 @module("next/cache") external cacheTag: string => unit = "cacheTag"
+
 @module("next/cache") external cacheLife: string => unit = "cacheLife"
 
 /**
