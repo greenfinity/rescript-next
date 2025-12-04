@@ -1,5 +1,5 @@
-module Errors = GreenfinityNext_Errors
-module Next = GreenfinityNext_Next
+module Errors = Errors
+module Next = Next
 
 let default: (Next.Req.t, Next.Res.t, 'a) => 'b = async (req, res, processIt) => {
   let v = await processIt(req->Next.Req.bodyAsJson)

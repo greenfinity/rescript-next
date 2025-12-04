@@ -479,28 +479,26 @@ __metadata:
   resolution: "@greenfinity/rescript-next@workspace:."
   dependencies:
     "@greenfinity/rescript-vitest": "npm:^0.2.0"
-    "@greenlabs/ppx-spice": "npm:0.2.8"
     "@rescript/react": "npm:^0.14.0-rc.1"
     "@vercel/functions": "npm:^2.0.0"
     "@vitest/coverage-v8": "npm:2.1.8"
     auto-changelog: "npm:^2.4.0"
     bs-loader: "npm:^2.0.7"
     jsdom: "npm:^26.0.0"
-    next: "npm:^16.0.1"
+    next: "npm:^16.0.7"
     next-auth: "npm:^4.24.11"
     nodemon: "npm:^3.0.1"
     prettier: "npm:^2.3.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    rescript: "npm:^12.0.0-rc.2"
+    rescript: "npm:^12.0.0"
     vitest: "npm:^2.1.8"
   peerDependencies:
-    "@greenlabs/ppx-spice": 0.2.8
     "@rescript/react": ^0.14.0-rc.1
     "@vercel/functions": ^2.0.0
-    next: ^16.0.1
+    next: ^16.0.7
     next-auth: ^4.24.11
-    rescript: ^12.0.0-rc.2
+    rescript: ^12.0.0
   languageName: unknown
   linkType: soft
 
@@ -514,13 +512,6 @@ __metadata:
   peerDependencies:
     rescript: ^12.0.0-beta.4
   checksum: 10/ed97513735fc1a936def1faf66a0b33372ff8af6cdeaeb0fcf7f88d7d6c4d7bca6620af14029c9add494d346aba7cc803184317d74344abf30debef72a9a41ab
-  languageName: node
-  linkType: hard
-
-"@greenlabs/ppx-spice@npm:0.2.8":
-  version: 0.2.8
-  resolution: "@greenlabs/ppx-spice@npm:0.2.8"
-  checksum: 10/e350900fa3f06d6e931f846cd1378c75312defcfa1fcd1233029985d4194de29ac2677a6f246123c359abab093f5688fcb6f0a4a6d6dba2575e4e64f40286abc
   languageName: node
   linkType: hard
 
@@ -802,65 +793,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/env@npm:16.0.1"
-  checksum: 10/f0cd6a4a24a53b3f6e3cd48c24739d708fa6fbf83c591d505f1cd06ee32476fd9f8a8376dce6e0254a35e92c1086d30d0a11662f05bb15e7d92954d21e1064bf
+"@next/env@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/env@npm:16.0.7"
+  checksum: 10/dc81ffaa22749e4a60233928bca2a89e91a5b2eedf0ec5e5ae43c19c432cbc4881a22205aafbb31e2e8e62ed54d7d97565691d0d2939f120bc1dea955ef2aa94
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-darwin-arm64@npm:16.0.1"
+"@next/swc-darwin-arm64@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-darwin-arm64@npm:16.0.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-darwin-x64@npm:16.0.1"
+"@next/swc-darwin-x64@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-darwin-x64@npm:16.0.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.0.1"
+"@next/swc-linux-arm64-gnu@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.0.7"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-linux-arm64-musl@npm:16.0.1"
+"@next/swc-linux-arm64-musl@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-linux-arm64-musl@npm:16.0.7"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-linux-x64-gnu@npm:16.0.1"
+"@next/swc-linux-x64-gnu@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-linux-x64-gnu@npm:16.0.7"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-linux-x64-musl@npm:16.0.1"
+"@next/swc-linux-x64-musl@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-linux-x64-musl@npm:16.0.7"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.0.1"
+"@next/swc-win32-arm64-msvc@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.0.7"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@next/swc-win32-x64-msvc@npm:16.0.1"
+"@next/swc-win32-x64-msvc@npm:16.0.7":
+  version: 16.0.7
+  resolution: "@next/swc-win32-x64-msvc@npm:16.0.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -901,30 +892,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/darwin-arm64@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/darwin-arm64@npm:12.0.0-rc.2"
+"@rescript/darwin-arm64@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/darwin-arm64@npm:12.0.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rescript/darwin-x64@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/darwin-x64@npm:12.0.0-rc.2"
+"@rescript/darwin-x64@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/darwin-x64@npm:12.0.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@rescript/linux-arm64@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/linux-arm64@npm:12.0.0-rc.2"
+"@rescript/linux-arm64@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/linux-arm64@npm:12.0.0"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rescript/linux-x64@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/linux-x64@npm:12.0.0-rc.2"
+"@rescript/linux-x64@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/linux-x64@npm:12.0.0"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -939,16 +930,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rescript/runtime@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/runtime@npm:12.0.0-rc.2"
-  checksum: 10/92373b8a1603217b4ef43a358564a884f3b02f235189b93319f0538799dadf6ecbca8d3bac1c54bed612943c352aa25e613696e58a73a1ffd5fbde516bb9e2d5
+"@rescript/runtime@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/runtime@npm:12.0.0"
+  checksum: 10/33653d53294a75a0f1beb93ed3a2b403c41fd1fe5270f760de092619aaf626db431d2e0ad82968921312ed51e889a15b845c8c8e388c09a16a9f4566e6e5b971
   languageName: node
   linkType: hard
 
-"@rescript/win32-x64@npm:12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "@rescript/win32-x64@npm:12.0.0-rc.2"
+"@rescript/win32-x64@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@rescript/win32-x64@npm:12.0.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2699,19 +2690,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "next@npm:16.0.1"
+"next@npm:^16.0.7":
+  version: 16.0.7
+  resolution: "next@npm:16.0.7"
   dependencies:
-    "@next/env": "npm:16.0.1"
-    "@next/swc-darwin-arm64": "npm:16.0.1"
-    "@next/swc-darwin-x64": "npm:16.0.1"
-    "@next/swc-linux-arm64-gnu": "npm:16.0.1"
-    "@next/swc-linux-arm64-musl": "npm:16.0.1"
-    "@next/swc-linux-x64-gnu": "npm:16.0.1"
-    "@next/swc-linux-x64-musl": "npm:16.0.1"
-    "@next/swc-win32-arm64-msvc": "npm:16.0.1"
-    "@next/swc-win32-x64-msvc": "npm:16.0.1"
+    "@next/env": "npm:16.0.7"
+    "@next/swc-darwin-arm64": "npm:16.0.7"
+    "@next/swc-darwin-x64": "npm:16.0.7"
+    "@next/swc-linux-arm64-gnu": "npm:16.0.7"
+    "@next/swc-linux-arm64-musl": "npm:16.0.7"
+    "@next/swc-linux-x64-gnu": "npm:16.0.7"
+    "@next/swc-linux-x64-musl": "npm:16.0.7"
+    "@next/swc-win32-arm64-msvc": "npm:16.0.7"
+    "@next/swc-win32-x64-msvc": "npm:16.0.7"
     "@swc/helpers": "npm:0.5.15"
     caniuse-lite: "npm:^1.0.30001579"
     postcss: "npm:8.4.31"
@@ -2754,7 +2745,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10/911b9073197c86206000dc2a6383c6b87cb4dd771c3dd1298d6e9616e36cbc791d7db9a7b7c685f4ba89056cf9cddc0571c22704b605fed98e2559d727c2be4c
+  checksum: 10/1c8e174534279bb68447c8aabc1c68eb28eef33eaea32bfe76613d7727c114542c787e4b5cfb76fcedb88e0861c5171a0ae85f3e61bdf6d50ac7749b7bf5f09d
   languageName: node
   linkType: hard
 
@@ -3117,16 +3108,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rescript@npm:^12.0.0-rc.2":
-  version: 12.0.0-rc.2
-  resolution: "rescript@npm:12.0.0-rc.2"
+"rescript@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "rescript@npm:12.0.0"
   dependencies:
-    "@rescript/darwin-arm64": "npm:12.0.0-rc.2"
-    "@rescript/darwin-x64": "npm:12.0.0-rc.2"
-    "@rescript/linux-arm64": "npm:12.0.0-rc.2"
-    "@rescript/linux-x64": "npm:12.0.0-rc.2"
-    "@rescript/runtime": "npm:12.0.0-rc.2"
-    "@rescript/win32-x64": "npm:12.0.0-rc.2"
+    "@rescript/darwin-arm64": "npm:12.0.0"
+    "@rescript/darwin-x64": "npm:12.0.0"
+    "@rescript/linux-arm64": "npm:12.0.0"
+    "@rescript/linux-x64": "npm:12.0.0"
+    "@rescript/runtime": "npm:12.0.0"
+    "@rescript/win32-x64": "npm:12.0.0"
   dependenciesMeta:
     "@rescript/darwin-arm64":
       optional: true
@@ -3144,7 +3135,7 @@ __metadata:
     rescript: cli/rescript.js
     rescript-legacy: cli/rescript-legacy.js
     rescript-tools: cli/rescript-tools.js
-  checksum: 10/a985949a67ad699edfbaeb1ab25b4370fbf2439de0092dd5beb896887a06a9bc055e74ef14c88b9910cb620355f439fe4375772d5312129a83731f86e2d4578a
+  checksum: 10/166c958fd7d7afb38531d577a55c59b3a06524c8bbacf7c1c01727a33bd9801c088e66132679c9e8c8ffb7dde99e2fb251100e0e73f0d1a02a4f2c2e78bc780f
   languageName: node
   linkType: hard
 
