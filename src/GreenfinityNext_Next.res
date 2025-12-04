@@ -315,7 +315,7 @@ module Image = {
 module Headers = {
   type t
 
-  @deprecated("Use makePromise instead and await the result.") @new @module("next/headers")
+  @deprecated("Use makeAsync instead and await the result.") @new @module("next/headers")
   external make: unit => t = "headers"
 
   @new @module("next/headers") external makeAsync: unit => promise<t> = "headers"

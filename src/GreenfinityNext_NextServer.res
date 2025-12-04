@@ -3,15 +3,8 @@
 // --
 
 module NextRequest = {
-  module Cookies = {
-    type t
-    @send external set: (t, string, string) => unit = "set"
-    @send external get: (t, string) => string = "get"
-    @send external getAll: t => dict<string> = "getAll"
-    @send external delete: (t, string) => unit = "delete"
-    @send external has: (t, string) => bool = "has"
-    @send external clear: t => unit = "clear"
-  }
+  @deprecated("Use GreenfinityNext.Cookies instead")
+  module Cookies = GreenfinityNext_Cookies
 
   module URL = {
     type t = {
@@ -36,7 +29,7 @@ module NextRequest = {
   type t = {
     headers: GreenfinityNext_Fetch.Headers.t,
     nextUrl: URL.t,
-    cookies: Cookies.t,
+    cookies: GreenfinityNext_Cookies.t,
   }
 
   @send external json: t => promise<JSON.t> = "json"

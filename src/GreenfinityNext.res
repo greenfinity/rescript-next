@@ -13,3 +13,4 @@ module Url = GreenfinityNext_Url
 module NextServer = GreenfinityNext_NextServer
 module Font = GreenfinityNext_Font
 module Cache = GreenfinityNext_Cache
+module Cookies = GreenfinityNext_Cookies
