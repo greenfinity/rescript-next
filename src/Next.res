@@ -321,12 +321,11 @@ module Headers = {
   @new @module("next/headers") external makeAsync: unit => promise<t> = "headers"
 
   // workaround for "cannot be used from client component" error (deprecated)
-  @module("./Next.bs.mjs")
-  @deprecated("Use makePromiseWithRequire instead and await the result.")
+  @module("./Next.mjs") @deprecated("Use makePromiseWithRequire instead and await the result.")
   external makeWithRequire: unit => t = "headersMakeWithRequire"
 
   // workaround for "cannot be used from client component" error
-  @module("./Next.bs.mjs")
+  @module("./Next.mjs")
   external makeAsyncWithRequire: unit => promise<t> = "headersMakeWithRequire"
 
   @send external _get: (t, string) => Nullable.t<string> = "get"
