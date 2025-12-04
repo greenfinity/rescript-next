@@ -1,5 +1,5 @@
-module Next = GreenfinityNext_Next
-open GreenfinityNext_NextAuthTypes
+module Next = Next
+open NextAuthTypes
 
 @module("next-auth/next")
 external _getServerSession: (Next.Req.t, Next.Res.t, _) => promise<Nullable.t<sessionData>> =

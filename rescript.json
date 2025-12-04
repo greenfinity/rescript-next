@@ -1,7 +1,7 @@
 {
   "name": "@greenfinity/rescript-next",
   "jsx": { "version": 4, "mode": "classic" },
-  "namespace": false,
+  "namespace": "greenfinity-next",
   "compiler-flags": ["-bs-no-version-header"],
   "suffix": ".bs.mjs",
   "package-specs": {
@@ -23,7 +23,6 @@
     "number": "-44",
     "error": "+101"
   },
-  "dependencies": ["@rescript/react", "@greenlabs/ppx-spice"],
-  "ppx-flags": ["@greenlabs/ppx-spice/ppx"],
+  "dependencies": ["@rescript/react"],
   "dev-dependencies": ["@greenfinity/rescript-vitest"]
 }

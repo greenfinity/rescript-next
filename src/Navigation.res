@@ -1,6 +1,6 @@
 // Support of server components
 
-open GreenfinityNext_Url
+open Url
 
 type type_ = [#replace | #push]
 @module("next/navigation")
@@ -24,7 +24,7 @@ module Router = {
   type t = {
     route: string,
     asPath: string,
-    events: GreenfinityNext_Next.Router.Events.t,
+    events: Next.Router.Events.t,
     // pathname, query are not returned in server components,
     // usePathname and useSearchParams has to be used instead.
   }
@@ -38,11 +38,11 @@ module Router = {
 
   @send external push: (t, string, ~options: options=?) => unit = "push"
   @send
-  external pushObj: (t, GreenfinityNext_Next.Router.pathObj, ~options: options=?) => unit = "push"
+  external pushObj: (t, Next.Router.pathObj, ~options: options=?) => unit = "push"
 
   @send external replace: (t, string, ~options: options=?) => unit = "replace"
   @send
-  external replaceObj: (t, GreenfinityNext_Next.Router.pathObj, ~options: options=?) => unit =
+  external replaceObj: (t, Next.Router.pathObj, ~options: options=?) => unit =
     "replace"
 
   @send external back: t => unit = "back"

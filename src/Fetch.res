@@ -1,4 +1,4 @@
-open GreenfinityNext_Errors
+open Errors
 open Belt
 
 type method = [#get | #post | #put]

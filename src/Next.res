@@ -12,7 +12,7 @@ module Req = {
 module Res = {
   type t
 
-  type statusCode = GreenfinityNext_Errors.apiErrorStatus
+  type statusCode = Errors.apiErrorStatus
 
   // https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
   @set
@@ -321,12 +321,12 @@ module Headers = {
   @new @module("next/headers") external makeAsync: unit => promise<t> = "headers"
 
   // workaround for "cannot be used from client component" error (deprecated)
-  @module("./GreenfinityNext_Next.mjs")
+  @module("./Next.bs.mjs")
   @deprecated("Use makePromiseWithRequire instead and await the result.")
   external makeWithRequire: unit => t = "headersMakeWithRequire"
 
   // workaround for "cannot be used from client component" error
-  @module("./GreenfinityNext_Next.mjs")
+  @module("./Next.bs.mjs")
   external makeAsyncWithRequire: unit => promise<t> = "headersMakeWithRequire"
 
   @send external _get: (t, string) => Nullable.t<string> = "get"

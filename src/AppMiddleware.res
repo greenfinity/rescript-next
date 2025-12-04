@@ -1,4 +1,4 @@
-open GreenfinityNext_NextServer
+open NextServer
 
 // App route support
 

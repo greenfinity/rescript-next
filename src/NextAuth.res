@@ -1,5 +1,5 @@
-module Next = GreenfinityNext_Next
-open GreenfinityNext_NextAuthTypes
+module Next = Next
+open NextAuthTypes
 
 module SessionProvider = {
   @module("next-auth/react") @react.component
