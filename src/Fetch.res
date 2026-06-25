@@ -20,14 +20,31 @@ module Headers = {
   // missing forEach, getSetCookie
 }
 
-module FetchResponse = {
+// The web `Response` — one Web API type, so one binding for both its *read*
+// side (what `fetch` resolves to) and its *construct* side (what an App Router
+// route handler returns). The latter is why `make` / `redirect` live here:
+// `next/navigation`'s `redirect` / `notFound` are control-flow throwers for
+// pages (no custom headers; `notFound` renders the HTML page), and
+// `NextServer.NextResponse`'s status is a closed 200/400/403/404/500 variant.
+module Response = {
   type t = {
     ok: bool,
     status: int,
+    headers: Headers.t,
     arrayBuffer: unit => promise<Js.TypedArray2.ArrayBuffer.t>,
     text: unit => promise<string>,
     json: unit => promise<JSON.t>,
   }
+
+  // Construct: `new Response(body, init)`. Body may be null (redirects, empty
+  // bodies); every `init` field is optional.
+  type init = {status?: int, statusText?: string, headers?: Headers.t}
+  @new external make: (Nullable.t<string>, init) => t = "Response"
+
+  // Static `Response.redirect(url, status)`. Sets Location + status only; for
+  // extra headers (e.g. `Cache-Control`) use `make` with `init.headers`.
+  @val @scope("Response") external redirect: (string, int) => t = "redirect"
+
   let jsonResult = async response => {
     let text = await response.text()
     try JSON.parseOrThrow(text)->Result.Ok catch {
@@ -43,7 +60,10 @@ module FetchResponse = {
   let json = async response => await response.json()
 }
 
-@val external fetch: (string, {..}) => promise<FetchResponse.t> = "fetch"
+// Former name; kept so existing consumers keep compiling. Prefer `Response`.
+module FetchResponse = Response
+
+@val external fetch: (string, {..}) => promise<Response.t> = "fetch"
 
 let fetchJson = async (url: string, body: JSON.t) => {
   let options = {
