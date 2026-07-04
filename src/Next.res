@@ -339,7 +339,12 @@ module Headers = {
 }
 
 /**
- * Module for handling Next.js metadata configuration
+ * Module for handling Next.js metadata configuration.
+ *
+ * DEPRECATED: kept only to support older code. New code should use the
+ * top-level `Metadata` module instead, which covers the full App Router
+ * Metadata API (metadataBase, title templates, canonical, OpenGraph, robots)
+ * and is a superset of this one.
  */
 module Metadata = {
   /**
