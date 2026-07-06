@@ -67,6 +67,17 @@ module NextResponse = {
   }
   @module("next/server") @scope("NextResponse")
   external next: nextOptions => t = "next"
+
+  /* Redirect to an absolute URL (build it from the request's nextUrl.origin).
+   * Defaults to 307; pass ~status for 301/302/308. */
+  @module("next/server") @scope("NextResponse")
+  external redirect: (string, ~status: int=?) => t = "redirect"
+
+  /* The RESPONSE cookie store (Set-Cookie): what a middleware/route handler
+   * sets on the way out — distinct from the request store on NextRequest.t.
+   * The shared Cookies surface (get/set/delete/…) fits both. */
+  @get
+  external cookies: t => GreenfinityNext.Cookies.t = "cookies"
 }
 
 module Middleware = {
